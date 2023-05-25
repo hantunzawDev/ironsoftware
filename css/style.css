@@ -217,11 +217,12 @@ b {
 /* Header CSS */
 
 header {
-    background-color: var(--color-1);
+  
     position: absolute;
     top: 0px ;
     left: 0px;
     width: 100%;
+    z-index: 99999;
 }
 
 header .logo-img {
@@ -260,6 +261,9 @@ header .nav-item-drop .drop-list {
     
 }
 @media all and (max-width: 992px) {
+    header {
+        background-color: var(--color-1);
+    }
     header .nav-item-drop .drop-list {
        
         position: relative;
@@ -278,15 +282,17 @@ header .nav-item-drop:hover .drop-list {
 
 main {
     background-color: var(--color-1);
-    height: 100%;
+   overflow: hidden;
+   width: 100%;
+   position: relative;
 }
 
 section {
-    padding: 100px 0px;
+    padding: 60px 0px;
 }
 
 section:first-child {
-    padding: 160px 0px 100px 0px;
+    padding: 80px 0px 60px 0px;
 }
 
 section.gradient {
@@ -324,6 +330,24 @@ section.bg-3 {
 
 
 /* component css */
+
+.trade-mark {
+    position: relative;
+    display: inline-block;
+}
+.trade-mark .trade-mark-icon {
+    position: absolute;
+    right: -54px;
+    bottom: 20px;
+}
+
+@media all and (max-width: 600px) {
+    .trade-mark .trade-mark-icon {
+      width: 40px;
+      right: -33px;
+      bottom: 20px;
+    }
+}
 .input-box {
     height: 65px;
     background-color: var(--white-1);
@@ -378,7 +402,12 @@ section.bg-3 {
 }
 
 
-
+.z-index-1 {
+    z-index: 1;
+}
+.z-index-0 {
+    z-index: 0;
+}
 /* Early content */
 .early-content {
     display: flex;
@@ -394,4 +423,75 @@ section.bg-3 {
 
 .early-content img {
     width: 150px;
+}
+
+/* Background CSS */
+
+.bg-img {
+    position: absolute !important;
+    right: 0px;
+    top: 0px;
+    width: 50%;
+ 
+}
+
+.bg-img * {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+
+.bg-img img:first-child {
+    left: 100px;top: 107px;
+}
+.bg-img img:nth-child(2) {
+    left: -60px;
+}
+.bg-img img:last-child {
+    left: 170px;top: 265px;
+}
+
+@media all and (max-width: 1440px) {
+    .bg-img img:nth-child(2) {
+        left: -20px;
+    }
+}
+
+@media all and (max-width: 1080px) {
+    .bg-img img:first-child {
+        width: 100px;
+    }
+    .bg-img img:nth-child(2) {
+        left: 0px;
+    }
+    .bg-img img:last-child {
+        width: 70px;
+        left: 140px;
+        top: 200px;
+    }
+}
+
+@media all and (max-width: 990px) {
+
+    .bg-img img:first-child {
+        left: 170px;
+        top: 52px;
+    }
+
+    .bg-img img:nth-child(2) {
+        left: 60px;
+    }
+   
+    .bg-img img:last-child {
+        left: 205px;
+    top: 147px;
+    }
+
+}
+
+@media all and (max-width:800px) {
+    .bg-img  {
+        display: none;
+    }
+
 }
